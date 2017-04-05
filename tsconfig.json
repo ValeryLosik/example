@@ -1,0 +1,24 @@
+{
+  "version": "2.1.4",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
+    "outDir": "dist",
+    "allowJs": true,
+    "typeRoots": [
+      "node_modules/@types/"
+    ],
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
+}

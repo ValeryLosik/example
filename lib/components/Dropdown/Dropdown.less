@@ -1,0 +1,56 @@
+@import './../styles/variables';
+@import './../styles/mixins';
+.dropdown {
+    position: relative;
+    cursor: pointer;
+    &__header {
+        width: 125px;
+        align-items: center;
+        background: fade(@color-gray-d, 60%);
+        border-radius: @borderRadiusSmall;
+        display: flex;
+        padding: 0 7px;
+    }
+    &__content {
+        position: absolute;
+        top: 100%;
+        width: 90%;
+        background: fade(@color-gray-d, 70%);
+        border-radius: 0 0 @borderRadiusSmall @borderRadiusSmall;
+        color: @color-white;
+        opacity: 0;
+        padding: 5px 7px;
+        transition: opacity .4s ease, visibility .4s ease;
+        visibility: hidden;
+        font-size: .9rem;
+        .dropdown__content__item {
+            padding: .3rem 0;
+        }
+    }
+    &__value {
+        color: @navi;
+        margin: 5.5px 0;
+    }
+    &__icon {
+        width: 17px;
+        height: 10px;
+        fill: @color-gray-c;
+        margin-left: auto;
+        transform: rotate3d(0, 0, 1, 90deg);
+        transition: transform .4s ease;
+    }
+    &_open {
+        .dropdown {
+            &__header {
+                border-radius: @borderRadiusSmall @borderRadiusSmall 0 0;
+            }
+            &__icon {
+                transform: rotate3d(0, 0, 1, 270deg);
+            }
+            &__content {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
